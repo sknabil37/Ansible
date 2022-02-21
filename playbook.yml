@@ -7,8 +7,13 @@
       name: "Installation of Different Softwares"
       package: 
         name: 
-          - httpd
-          - php
+          - '{{ apache_package }}'
+          - '{{ php_package }}'
         state: latest
         update_cache: yes
-
+    -
+      name: "Ensure All Service Running"
+      systemd:
+         name: httpd
+         state: started
+         enabled: yes
