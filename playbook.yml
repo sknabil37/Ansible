@@ -1,0 +1,14 @@
+--- 
+- 
+  hosts: linux
+  name: "Ansible First Playbook"
+  tasks: 
+    - 
+      name: "Installation of Different Softwares"
+      package: 
+        name: 
+          - httpd
+          - php
+        state: latest
+        update_cache: yes
+
